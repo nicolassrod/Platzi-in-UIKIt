@@ -135,9 +135,15 @@ class ExploreController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-        cell.backgroundColor = .red
-        return cell
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+            cell.addSubview(FeaturedCourse(frame: cell.bounds))
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+            cell.backgroundColor = .red
+            return cell
+        }
     }
     
     override func viewDidLoad() {
