@@ -53,16 +53,6 @@ class CourseView: UIView {
         courseImage.translatesAutoresizingMaskIntoConstraints = false
         courseImage.heightAnchor.constraint(equalToConstant: 75).isActive = true
         courseImage.widthAnchor.constraint(equalToConstant: 75).isActive = true
-//        courseImage.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        courseImage.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-//        courseImage.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        courseImage.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-//
-//        courseText.translatesAutoresizingMaskIntoConstraints = false
-//        courseText.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
-//        courseText.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20).isActive = true
-//        courseText.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20).isActive = true
-//        courseText.heightAnchor.constraint(greaterThanOrEqualToConstant: 20).isActive = true
     }
     
     required init?(coder: NSCoder) {
@@ -74,7 +64,8 @@ class CourseView: UIView {
 
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
+        Container()
+            .previewLayout(.fixed(width: 350, height: 120))
     }
     
     struct Container: UIViewRepresentable {

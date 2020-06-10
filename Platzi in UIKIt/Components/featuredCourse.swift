@@ -14,7 +14,7 @@ class FeaturedCourse: UIView {
         let courseImage = UIImageView()
         courseImage.clipsToBounds = true
         courseImage.image = UIImage(named: "adwords-background")
-        courseImage.contentMode = .scaleAspectFit
+        courseImage.contentMode = .scaleAspectFill
         return courseImage
     }()
     
@@ -58,7 +58,8 @@ class FeaturedCourse: UIView {
 
 struct FeaturedCourse_Previews: PreviewProvider {
     static var previews: some View {
-        Container().edgesIgnoringSafeArea(.all)
+        Container()
+            .previewLayout(.fixed(width: 320, height: 200))
     }
     
     struct Container: UIViewRepresentable {
