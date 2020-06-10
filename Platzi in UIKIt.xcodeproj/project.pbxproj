@@ -14,7 +14,7 @@
 		371D148A248E974000B29ADE /* Platzi_in_UIKItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1489248E974000B29ADE /* Platzi_in_UIKItTests.swift */; };
 		371D1495248E974000B29ADE /* Platzi_in_UIKItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1494248E974000B29ADE /* Platzi_in_UIKItUITests.swift */; };
 		379AFF31248EF4EB0090FCDB /* FeaturedCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379AFF30248EF4EB0090FCDB /* FeaturedCourse.swift */; };
-		37E817C7248F18EB00DEDD0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E817C6248F18EB00DEDD0A /* ViewController.swift */; };
+		37E817C7248F18EB00DEDD0A /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E817C6248F18EB00DEDD0A /* ExploreController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +48,7 @@
 		371D1494248E974000B29ADE /* Platzi_in_UIKItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platzi_in_UIKItUITests.swift; sourceTree = "<group>"; };
 		371D1496248E974000B29ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		379AFF30248EF4EB0090FCDB /* FeaturedCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCourse.swift; sourceTree = "<group>"; };
-		37E817C6248F18EB00DEDD0A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		37E817C6248F18EB00DEDD0A /* ExploreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 				379AFF2F248EF49D0090FCDB /* Components */,
 				371D1472248E973D00B29ADE /* AppDelegate.swift */,
 				371D1474248E973D00B29ADE /* SceneDelegate.swift */,
-				37E817C6248F18EB00DEDD0A /* ViewController.swift */,
+				37E817C6248F18EB00DEDD0A /* ExploreController.swift */,
 				371D147B248E974000B29ADE /* Assets.xcassets */,
 				371D147D248E974000B29ADE /* LaunchScreen.storyboard */,
 				371D1480248E974000B29ADE /* Info.plist */,
@@ -268,7 +268,7 @@
 			files = (
 				379AFF31248EF4EB0090FCDB /* FeaturedCourse.swift in Sources */,
 				371D1473248E973D00B29ADE /* AppDelegate.swift in Sources */,
-				37E817C7248F18EB00DEDD0A /* ViewController.swift in Sources */,
+				37E817C7248F18EB00DEDD0A /* ExploreController.swift in Sources */,
 				371D1475248E973D00B29ADE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
