@@ -136,11 +136,14 @@ class ExploreController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCellId", for: indexPath)
             cell.addSubview(FeaturedCourse(frame: cell.bounds))
             return cell
+        } else if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCellId", for: indexPath) as! Couse
+            return cell
         } else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCellId", for: indexPath)
             cell.backgroundColor = .red
             return cell
         }
@@ -151,8 +154,9 @@ class ExploreController: UICollectionViewController {
         
         navigationItem.title = "Explore"
         collectionView.backgroundColor = .white
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaultCellId")
         collectionView.register(Header.self, forSupplementaryViewOfKind: "catHeaderId", withReuseIdentifier: "headerId")
+        collectionView.register(Couse.self, forCellWithReuseIdentifier: "courseCellId")
     }
     
     required init?(coder: NSCoder) {
@@ -196,6 +200,28 @@ class Header: UICollectionReusableView {
     required init?(coder: NSCoder) {
          fatalError("init(coder:) has not been implemented")
      }
+}
+
+class Couse: UICollectionViewCell {
+    let course = CourseView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(course)
+    }
+    
+    override func layoutSubviews() {
+        course.translatesAutoresizingMaskIntoConstraints = false
+        course.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
+        course.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
+        course.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
+        course.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
