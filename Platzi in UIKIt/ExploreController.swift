@@ -141,6 +141,9 @@ class ExploreController: UICollectionViewController {
         } else if indexPath.section == 1 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "courseCellId", for: indexPath) as! CourseCell
             return cell
+        } else if indexPath.section == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pathCellId", for: indexPath) as! PathCell
+            return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCellId", for: indexPath)
             cell.backgroundColor = .red
@@ -157,6 +160,7 @@ class ExploreController: UICollectionViewController {
         collectionView.register(Header.self, forSupplementaryViewOfKind: "catHeaderId", withReuseIdentifier: "headerId")
         collectionView.register(FeaturedCourseCell.self, forCellWithReuseIdentifier: "featuredCourseCellId")
         collectionView.register(CourseCell.self, forCellWithReuseIdentifier: "courseCellId")
+        collectionView.register(PathCell.self, forCellWithReuseIdentifier: "pathCellId")
     }
     
     required init?(coder: NSCoder) {
@@ -237,6 +241,27 @@ class CourseCell: UICollectionViewCell {
         course.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
         course.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
         course.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class PathCell: UICollectionViewCell {
+    let path = PathView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(path)
+    }
+    
+    override func layoutSubviews() {
+        path.translatesAutoresizingMaskIntoConstraints = false
+        path.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
+        path.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
+        path.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
+        path.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
     }
     
     required init?(coder aDecoder: NSCoder) {
