@@ -46,6 +46,8 @@ class PathView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
         addSubview(pathImage)
         addSubview(background)
         addSubview(pathTitle)
