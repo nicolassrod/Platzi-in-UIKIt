@@ -68,7 +68,7 @@ class ExploreController: UICollectionViewController {
                 item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
                 
                 let group = NSCollectionLayoutGroup.vertical(layoutSize:
-                    .init(widthDimension: .fractionalWidth(0.70), heightDimension: .estimated(165)), subitem: item, count: 1)
+                    .init(widthDimension: .fractionalWidth(0.70), heightDimension: .estimated(210)), subitem: item, count: 1)
                 group.interItemSpacing = .fixed(8)
                 
                 let section = NSCollectionLayoutSection(group: group)
@@ -144,6 +144,9 @@ class ExploreController: UICollectionViewController {
         } else if indexPath.section == 2 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pathCellId", for: indexPath) as! PathCell
             return cell
+        } else if indexPath.section == 3 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "postCellId", for: indexPath) as! PostCell
+            return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "defaultCellId", for: indexPath)
             cell.backgroundColor = .red
@@ -161,6 +164,7 @@ class ExploreController: UICollectionViewController {
         collectionView.register(FeaturedCourseCell.self, forCellWithReuseIdentifier: "featuredCourseCellId")
         collectionView.register(CourseCell.self, forCellWithReuseIdentifier: "courseCellId")
         collectionView.register(PathCell.self, forCellWithReuseIdentifier: "pathCellId")
+        collectionView.register(PostCell.self, forCellWithReuseIdentifier: "postCellId")
     }
     
     required init?(coder: NSCoder) {
@@ -211,7 +215,7 @@ class FeaturedCourseCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(course)
+        contentView.addSubview(course)
     }
     
     override func layoutSubviews() {
@@ -232,7 +236,7 @@ class CourseCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(course)
+        contentView.addSubview(course)
     }
     
     override func layoutSubviews() {
@@ -253,7 +257,7 @@ class PathCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        addSubview(path)
+        contentView.addSubview(path)
     }
     
     override func layoutSubviews() {
@@ -265,6 +269,27 @@ class PathCell: UICollectionViewCell {
     }
     
     required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class PostCell: UICollectionViewCell {
+    var post = PostView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(post)
+    }
+    
+    override func layoutSubviews() {
+        post.translatesAutoresizingMaskIntoConstraints = false
+        post.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        post.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        post.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        post.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+    }
+    
+    required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
