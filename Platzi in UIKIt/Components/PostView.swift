@@ -17,7 +17,7 @@ class PostView: UIView {
         stack.spacing = 12
         return stack
     }()
-
+    
     private lazy var stack2: UIStackView = {
         let stack = UIStackView()
         stack.axis = .horizontal
@@ -39,7 +39,7 @@ class PostView: UIView {
         postBackgroundImage.contentMode = .scaleAspectFill
         return postBackgroundImage
     }()
-
+    
     lazy var postUserImage: UIImageView = {
         let postUserImage = UIImageView()
         postUserImage.clipsToBounds = true
@@ -48,8 +48,7 @@ class PostView: UIView {
         postUserImage.layer.cornerRadius = 20
         return postUserImage
     }()
-
-
+    
     lazy var postUsername: UILabel = {
         let postUsername = UILabel()
         postUsername.text = "isisconvelo"
@@ -58,7 +57,7 @@ class PostView: UIView {
         postUsername.textColor = .white
         return postUsername
     }()
-
+    
     lazy var postTitle: UILabel = {
         let postTitle = UILabel()
         postTitle.text = "Habla 3 idiomas y dirige la Escuela de Inglés de Platzi, ¿sabes quién es"
@@ -81,9 +80,6 @@ class PostView: UIView {
         stack1.addArrangedSubview(stack2)
         stack2.addArrangedSubview(postUserImage)
         stack2.addArrangedSubview(postUsername)
-//        addSubview(postUserImage)
-//        addSubview(postUsername)
-//        addSubview(postTitle)
     }
     
     override func layoutSubviews() {
