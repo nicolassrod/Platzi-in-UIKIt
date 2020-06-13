@@ -102,19 +102,19 @@ class ExploreController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if indexPath.section == 1 {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! Header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! HeaderReusableCell
             header.label.text = "Cursos"
             return header
         } else if indexPath.section == 2 {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! Header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! HeaderReusableCell
             header.label.text = "Rutas Recomendadas"
             return header
         } else if indexPath.section == 3 {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! Header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! HeaderReusableCell
             header.label.text = "Últimos posts"
             return header
         } else if indexPath.section == 4 {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! Header
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! HeaderReusableCell
             header.label.text = "Últimos podcasts"
             return header
         } else {
@@ -163,155 +163,12 @@ class ExploreController: UICollectionViewController {
         navigationItem.title = "Explore"
         collectionView.backgroundColor = .white
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "defaultCellId")
-        collectionView.register(Header.self, forSupplementaryViewOfKind: "catHeaderId", withReuseIdentifier: "headerId")
+        collectionView.register(HeaderReusableCell.self, forSupplementaryViewOfKind: "catHeaderId", withReuseIdentifier: "headerId")
         collectionView.register(FeaturedCourseCell.self, forCellWithReuseIdentifier: "featuredCourseCellId")
         collectionView.register(CourseCell.self, forCellWithReuseIdentifier: "courseCellId")
         collectionView.register(PathCell.self, forCellWithReuseIdentifier: "pathCellId")
         collectionView.register(PostCell.self, forCellWithReuseIdentifier: "postCellId")
         collectionView.register(PodcastCell.self, forCellWithReuseIdentifier: "podcastCellId")
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class Header: UICollectionReusableView {
-    lazy var label: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
-        label.textColor = .black
-        return label
-    }()
-    
-    lazy var button: UIButton = {
-        let button = UIButton()
-        button.setTitle("Ver todo", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        return button
-    }()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        addSubview(label)
-        addSubview(button)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0.6).isActive = true
-        label.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
-        button.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-         fatalError("init(coder:) has not been implemented")
-     }
-}
-
-class FeaturedCourseCell: UICollectionViewCell {
-    let course = FeaturedCourse()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(course)
-    }
-    
-    override func layoutSubviews() {
-        course.translatesAutoresizingMaskIntoConstraints = false
-        course.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
-        course.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
-        course.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
-        course.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class CourseCell: UICollectionViewCell {
-    let course = CourseView()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(course)
-    }
-    
-    override func layoutSubviews() {
-        course.translatesAutoresizingMaskIntoConstraints = false
-        course.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
-        course.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
-        course.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
-        course.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class PathCell: UICollectionViewCell {
-    let path = PathView()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(path)
-    }
-    
-    override func layoutSubviews() {
-        path.translatesAutoresizingMaskIntoConstraints = false
-        path.leftAnchor.constraint(equalToSystemSpacingAfter: self.leftAnchor, multiplier: 0).isActive = true
-        path.rightAnchor.constraint(equalToSystemSpacingAfter: self.rightAnchor, multiplier: 0).isActive = true
-        path.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0).isActive = true
-        path.bottomAnchor.constraint(equalToSystemSpacingBelow: self.bottomAnchor, multiplier: 0).isActive = true
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class PostCell: UICollectionViewCell {
-    var post = PostView()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(post)
-    }
-    
-    override func layoutSubviews() {
-        post.translatesAutoresizingMaskIntoConstraints = false
-        post.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        post.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        post.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        post.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class PodcastCell: UICollectionViewCell {
-    var podcast = PodcastView()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.addSubview(podcast)
-    }
-    
-    override func layoutSubviews() {
-        podcast.translatesAutoresizingMaskIntoConstraints = false
-        podcast.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        podcast.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        podcast.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        podcast.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
     
     required init?(coder: NSCoder) {

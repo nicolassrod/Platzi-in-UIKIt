@@ -13,6 +13,12 @@
 		371D147F248E974000B29ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 371D147D248E974000B29ADE /* LaunchScreen.storyboard */; };
 		371D148A248E974000B29ADE /* Platzi_in_UIKItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1489248E974000B29ADE /* Platzi_in_UIKItTests.swift */; };
 		371D1495248E974000B29ADE /* Platzi_in_UIKItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371D1494248E974000B29ADE /* Platzi_in_UIKItUITests.swift */; };
+		378AD1BD24945EFA003FAC0F /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378AD1BC24945EFA003FAC0F /* HeaderCell.swift */; };
+		378AD1C024945F3E003FAC0F /* FeaturedCourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378AD1BF24945F3E003FAC0F /* FeaturedCourseCell.swift */; };
+		378AD1C224945F76003FAC0F /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378AD1C124945F76003FAC0F /* CourseCell.swift */; };
+		378AD1C424945F94003FAC0F /* PathCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378AD1C324945F94003FAC0F /* PathCell.swift */; };
+		378AD1C824945FC1003FAC0F /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378AD1C724945FC1003FAC0F /* PostCell.swift */; };
+		378AD1CA24945FDE003FAC0F /* PodcastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378AD1C924945FDE003FAC0F /* PodcastCell.swift */; };
 		379AFF31248EF4EB0090FCDB /* FeaturedCourse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379AFF30248EF4EB0090FCDB /* FeaturedCourse.swift */; };
 		37C329512493E95A00B330CE /* PodcastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C329502493E95A00B330CE /* PodcastView.swift */; };
 		37C3B65A24919CF700B8B1D9 /* PathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3B65924919CF700B8B1D9 /* PathView.swift */; };
@@ -51,6 +57,12 @@
 		371D1490248E974000B29ADE /* Platzi in UIKItUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Platzi in UIKItUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		371D1494248E974000B29ADE /* Platzi_in_UIKItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platzi_in_UIKItUITests.swift; sourceTree = "<group>"; };
 		371D1496248E974000B29ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		378AD1BC24945EFA003FAC0F /* HeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		378AD1BF24945F3E003FAC0F /* FeaturedCourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCourseCell.swift; sourceTree = "<group>"; };
+		378AD1C124945F76003FAC0F /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
+		378AD1C324945F94003FAC0F /* PathCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathCell.swift; sourceTree = "<group>"; };
+		378AD1C724945FC1003FAC0F /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		378AD1C924945FDE003FAC0F /* PodcastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCell.swift; sourceTree = "<group>"; };
 		379AFF30248EF4EB0090FCDB /* FeaturedCourse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedCourse.swift; sourceTree = "<group>"; };
 		37C329502493E95A00B330CE /* PodcastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastView.swift; sourceTree = "<group>"; };
 		37C3B65924919CF700B8B1D9 /* PathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathView.swift; sourceTree = "<group>"; };
@@ -107,10 +119,9 @@
 		371D1471248E973D00B29ADE /* Platzi in UIKIt */ = {
 			isa = PBXGroup;
 			children = (
-				379AFF2F248EF49D0090FCDB /* Components */,
+				378AD1BB24945ED3003FAC0F /* Views */,
 				371D1472248E973D00B29ADE /* AppDelegate.swift */,
 				371D1474248E973D00B29ADE /* SceneDelegate.swift */,
-				37E817C6248F18EB00DEDD0A /* ExploreController.swift */,
 				371D147B248E974000B29ADE /* Assets.xcassets */,
 				371D147D248E974000B29ADE /* LaunchScreen.storyboard */,
 				371D1480248E974000B29ADE /* Info.plist */,
@@ -134,6 +145,37 @@
 				371D1496248E974000B29ADE /* Info.plist */,
 			);
 			path = "Platzi in UIKItUITests";
+			sourceTree = "<group>";
+		};
+		378AD1BB24945ED3003FAC0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				378AD1CB249460F5003FAC0F /* Controllers */,
+				379AFF2F248EF49D0090FCDB /* Components */,
+				378AD1BE24945F23003FAC0F /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		378AD1BE24945F23003FAC0F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				378AD1BC24945EFA003FAC0F /* HeaderCell.swift */,
+				378AD1BF24945F3E003FAC0F /* FeaturedCourseCell.swift */,
+				378AD1C124945F76003FAC0F /* CourseCell.swift */,
+				378AD1C324945F94003FAC0F /* PathCell.swift */,
+				378AD1C724945FC1003FAC0F /* PostCell.swift */,
+				378AD1C924945FDE003FAC0F /* PodcastCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		378AD1CB249460F5003FAC0F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				37E817C6248F18EB00DEDD0A /* ExploreController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		379AFF2F248EF49D0090FCDB /* Components */ = {
@@ -280,11 +322,17 @@
 			files = (
 				37C3B65C2491B29E00B8B1D9 /* PostView.swift in Sources */,
 				379AFF31248EF4EB0090FCDB /* FeaturedCourse.swift in Sources */,
+				378AD1C824945FC1003FAC0F /* PostCell.swift in Sources */,
+				378AD1C024945F3E003FAC0F /* FeaturedCourseCell.swift in Sources */,
+				378AD1C224945F76003FAC0F /* CourseCell.swift in Sources */,
 				37C3B65A24919CF700B8B1D9 /* PathView.swift in Sources */,
+				378AD1CA24945FDE003FAC0F /* PodcastCell.swift in Sources */,
 				371D1473248E973D00B29ADE /* AppDelegate.swift in Sources */,
+				378AD1BD24945EFA003FAC0F /* HeaderCell.swift in Sources */,
 				37DB644724917F55004AC280 /* CourseView.swift in Sources */,
 				37C329512493E95A00B330CE /* PodcastView.swift in Sources */,
 				37E817C7248F18EB00DEDD0A /* ExploreController.swift in Sources */,
+				378AD1C424945F94003FAC0F /* PathCell.swift in Sources */,
 				371D1475248E973D00B29ADE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
