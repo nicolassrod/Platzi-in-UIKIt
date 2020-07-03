@@ -58,6 +58,7 @@ class PodcastView: UIView {
     }
 }
 
+@available(iOS 13.0, *)
 struct PodcastView_Previews: PreviewProvider {
     static var previews: some View {
         Container()

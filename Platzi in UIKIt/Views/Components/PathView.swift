@@ -87,6 +87,7 @@ class PathView: UIView {
     }
 }
 
+@available(iOS 13.0, *)
 struct PathView_Previews: PreviewProvider {
     static var previews: some View {
         Container()

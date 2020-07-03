@@ -62,6 +62,7 @@ class CourseView: UIView {
     
 }
 
+@available(iOS 13.0, *)
 struct CourseView_Previews: PreviewProvider {
     static var previews: some View {
         Container()

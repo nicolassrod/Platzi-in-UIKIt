@@ -114,6 +114,7 @@ class PostView: UIView {
     
 }
 
+@available(iOS 13.0, *)
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
         Container()
